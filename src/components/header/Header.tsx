@@ -1,13 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../container/Container";
-import {
-  StyledHeader,
-  StyledLogo,
-  Nav,
-  LinksContainer,
-  StyledLink,
-} from "./Headet.styles";
+import CustomLink from "../custom-link/CustomLink";
+import { StyledHeader, StyledLogo, Nav, LinksContainer } from "./Headet.styles";
 
 const Header = () => (
   <StyledHeader>
@@ -17,8 +12,12 @@ const Header = () => (
           <StyledLogo />
         </Link>
         <LinksContainer>
-          <StyledLink to="/version">Версия для слабовидящих</StyledLink>
-          <StyledLink to="/profile">Мой профиль</StyledLink>
+          <CustomLink inverted to="/#">
+            Версия для слабовидящих
+          </CustomLink>
+          <CustomLink inverted to="/#">
+            Мой профиль
+          </CustomLink>
         </LinksContainer>
       </Nav>
     </Container>

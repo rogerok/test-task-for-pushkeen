@@ -65,12 +65,13 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0 auto;
-    width: 1116px;
+    width: 1400px;
     max-width: 100%;
     font-family: "Open Sans", "Alegreya Sans SC", sans-serif;
     fonst-size: 16px;
     font-weight: 400;
-    color: #939393
+    color: #939393;
+    box-sizing: border-box;
   }
 a {
   color: inherit;

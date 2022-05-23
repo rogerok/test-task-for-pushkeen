@@ -1,22 +1,28 @@
 import React from "react";
-import Container from "./components/container/Container";
-import Header from "./components/header/Header";
+import { useRoutes } from "react-router-dom";
+/* import Container from "./components/container/Container";
+  import Header from "./components/header/Header"; */
+import MainPage from "./pages/main/MainPage";
+import Layout from "./components/layout/Layout";
 
-const App = () => (
-  <>
-    <Header />
-    <Container>
-      <div
-        className="App"
-        style={{
-          color: "black",
-          fontFamily: "Open Sans",
-        }}
-      >
-        Hi there
-      </div>
-    </Container>
-  </>
-);
+const routes = [
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <MainPage />,
+      },
+    ],
+  },
+];
+
+const App = () => {
+  const elements = useRoutes(routes);
+
+  // eslint-disable-next-line react/jsx-no-useless-fragment
+  return <>{elements}</>;
+};
 
 export default App;
